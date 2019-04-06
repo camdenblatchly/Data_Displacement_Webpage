@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
+    <style>
+        /* CSS  code */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .col a {
+            text-decoration: none;
+        }
+
+        .words a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 500;
+        }
+
+        body {
+            background-color: #fcfbf8;
+        }
+
+        .footer {
+            color: #A9A9A9;
+            padding: 20px;
+            bottom: 0;
+        }
+
+        .landing {
+            height: 550px;
+            margin: 0 auto;
+            padding-top: 150px;
+            text-align: center;
+        }
+
+        .landing h1 {
+            font-size: 90px;
+            padding: 20px;
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 500;
+        }
+
+        .tile h2 {
+            color: #eee9e9;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 40px;
+        }
+
+        .tile {
+            height: 310px;
+            -webkit-transition: transform 1s, opacity 1s;
+            transition: transform 1s, opacity 1s;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo {
+            height: 310px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tile:hover {
+            -webkit-transform:scale(0.8);
+            -moz-transform:scale(0.8);
+            -ms-transform:scale(0.8);
+            transform:scale(0.8);
+        }
+
+        .tile h2:hover {
+            text-decoration: underline;
+        }
+
+        .active {
+            -webkit-transform:scale(0.8);
+            -moz-transform:scale(0.8);
+            -ms-transform:scale(0.8);
+            transform:scale(0.8);
+        }
+
+        .words {
+
+            transform: scaleY(0);
+            transform-origin: top;
+            height: 0px;
+
+            transition: transform 0.2s ease;
+
+            overflow: hidden;
+
+            text-align: left;
+        }
+
+        .words h1, h2 {
+            font-weight: 400;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #section1 {
+            background-color: #AA3939;
+        }
+        #section2 {
+            background-color: #226666;
+        }
+        #section3 {
+            background-image: url('src/bamboo-thatcher-pickup.jpg');
+            background-size: cover;
+        }
+        #section4 {
+            background-color: #AA6C39;
+        }
+        #section5{
+            background-color: #AA6C39;
+        }
+        #section6{
+            background-image: url('src/eagles-eye-camp-view.jpg');
+            background-size: cover;
+        }
+        #section7{
+            background-color: #AA3939;
+        }
+        #section8{
+            background-color: #226666;
+        }
+
+        #about_photo{
+            background-image: url('src/camp-from-afar.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #methods_photo{
+            background-image: url('src/construction-trainee.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #findings_photo{
+            background-image: url('src/clothes-in-a-camp.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #project_team_photo{
+            background-image: url('src/child-selling-popcorn-camp.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+</head>
+<body>
+<!-- HTML code -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="landing">
+            <h1>Big Data and Displacement</h1>
+            <h3>How can we use big data to better inform our understanding of forced migration?</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col tile" id="section1"><a href="#about"> <h2>Overview</h2></a></div>
+        <div class="col tile" id="section2"><a href="#methods"><h2>Methods</h2></a></div>
+        <div class="col photo" id="section3"></div>
+        <div class="col tile" id="section4"><a href="" > <h2>Drivers of Movement</h2> </a></div>
+    </div>
+    <div class="container-fluid row words" id="about">
+        <div class="col-sm-6">
+            <h1>Patterns of Migration</h1>
+            <p>Providing earlier and more accurate warnings of displacement is key to improving global
+                preparedeness to events of forced migration. Researchers at Georgetown University and York
+                University have developed a predictive model to determine how perception, buzz, and event variables gleaned from Big Data text mining techniques influence individual's perceived threat levels, thereby providing insight into their preferences and actions in the face of potential displacement.
+            </p>
+        </div>
+        <div class="col-sm-6" id="about_photo"></div>
+    </div>
+    <div class="container-fluid row words" id="methods">
+        <div class="col-sm-6">
+            <h1>Research Methods</h1>
+            <p>We use local print and social media, specifically Twitter, to identify the changing dynamics of events and perceptions that may directly or indirectly have triggered displacement in and from Iraq over the last few years. The newspaper and print data are part of an archive of more than 700 million publicly available open-source media articles that has been actively compiled at Georgetown University since 2006 [Singh & Pemmaraju, 2017]. We also use over 1.5 billion tweets in English and Arabic from organizations and individuals that regularly post on developments in Iraq and related to relevant hashtags, including ones associated with extremist groups in the region. </p>
+        </div>
+        <div class="col-sm-6" id="methods_photo"></div>
+    </div>
+    <div class="row">
+        <div class="col tile" id="section5"><a href="#findings"><h2>Findings</h2></a></div>
+        <div class="col photo" id="section6"></div>
+        <div class="col tile" id="section7"> <h2>Analytic Tools and Data</h2> </div>
+        <div class="col tile" id="section8"><a href="#project_team"> <h2>Project Team</h2> </a></div>
+    </div>
+    <div class="container-fluid row words" id="findings">
+        <div class="col-sm-6">
+            <h1>Research Findings</h1>
+            <p>Since 2014 our interdisciplinary team has published results about forced migration, algorithms for extracting signals from unstructured data, and our project methodology. The project was founded
+                in collaboration with researchers at Georgetown University, York University, and Lawrence Livermore Laboratory with support from the National Science Foundation, the Georgetown University Massive
+                Data Institute, the Social Sciences and Humanities Research Council of Canada, and the Georgetown
+                Institute for the Study of Migration.</p>
+        </div>
+        <div class="col-sm-6" id="findings_photo"></div>
+    </div>
+    <div class="container-fluid row words" id="project_team">
+        <div class="col-sm-6">
+            <h2>Project Overview</h2>
+            <p>This project aims to develop methods and approaches for using big data in conjunction with traditional survey data to understand and eventually forecast mass movement of people who are forced to migrate. Our initial case study is Iraq and Syria. The site will be used to highlight both the theoretical and data driven methodologies that our project team uses, as we make progress.</p>
+            <h2>Project Founders</h2>
+            <ul>
+                <li>Lisa Singh, Georgetown University</li>
+                <li>Susan Martin, Georgetown University</li>
+                <li>Jeff Collmann, Georgetown University</li>
+                <li>Susan McGrath, York University</li>
+                <li>Sid Berkowitz, Georgetown University</li>
+            </ul>
+        </div>
+        <div class="col-sm-6" id="project_team_photo"></div>
+    </div>
+    <div class="row footer">
+        <p>Copyright 2019 Lisa Singh, Photos Copyright 2019 International Organization for Migration</p>
+    </div>
+</div>
+<script>
+    document.getElementById("section1").onclick = function() {displaySection1()};
+    document.getElementById("section2").onclick = function() {displaySection2()};
+    document.getElementById("section5").onclick = function() {displaySection5()};
+    document.getElementById("section8").onclick = function() {displaySection8()};
+
+    var sections = ["about", "findings", "picture", "project_team", "model", "picture", "methods", "viz"];
+
+    function displaySection1() {
+        if ( document.getElementById("section1").classList.contains('active')) {
+            //document.getElementById("about").style.display = "none";
+            document.getElementById("about").style.transform = "scaleY(0)";
+            document.getElementById("about").style.height = "0px";
+            document.getElementById("section1").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            //document.getElementById("about").style.display = "flex";
+            document.getElementById("about").style.transform = "scaleY(1)";
+            document.getElementById("about").style.height = "auto";
+            document.getElementById("about").style.padding = "5px";
+            document.getElementById("section1").classList.add('active');
+        }
+    }
+
+
+    function displaySection2() {
+        if ( document.getElementById("section2").classList.contains('active')) {
+            //document.getElementById("methods").style.display = "none";
+            document.getElementById("methods").style.height = "0px";
+            document.getElementById("methods").style.transform = "scaleY(0)";
+            document.getElementById("section2").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            //document.getElementById("methods").style.display = "flex";
+            document.getElementById("methods").style.height = "auto";
+            document.getElementById("methods").style.transform = "scaleY(1)";
+            document.getElementById("methods").style.padding = "5px";
+            document.getElementById("section2").classList.add('active');
+        }
+    }
+
+
+    function displaySection5() {
+        if ( document.getElementById("section5").classList.contains('active')) {
+            //document.getElementById("findings").style.display = "none";
+            document.getElementById("findings").style.height = "0px";
+            document.getElementById("findings").style.transform = "scaleY(0)";
+            document.getElementById("section5").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            //document.getElementById("findings").style.display = "flex";
+            document.getElementById("findings").style.height = "auto";
+            document.getElementById("findings").style.transform = "scaleY(1)";
+            document.getElementById("findings").style.padding = "5px";
+            document.getElementById("section5").classList.add('active');
+        }
+    }
+
+    function displaySection8() {
+        if ( document.getElementById("section8").classList.contains('active')) {
+            //document.getElementById("project_team").style.display = "none";
+            document.getElementById("project_team").style.height = "0px";
+            document.getElementById("project_team").style.transform = "scaleY(0)";
+            document.getElementById("section8").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            //document.getElementById("project_team").style.display = "flex";
+            document.getElementById("project_team").style.height = "auto";
+            document.getElementById("project_team").style.transform = "scaleY(1)";
+            document.getElementById("project_team").style.padding = "5px";
+            document.getElementById("section8").classList.add('active');
+        }
+    }
+
+
+    function resetWords() {
+        var words = document.getElementsByClassName("words");
+        for (var i=0; i < words.length; i++) {
+            //words[i].style.display = "none";
+            words[i].style.transform = "scaleY(0)";
+            words[i].style.height = "0px";
+            words[i].style.padding = "0px";
+        }
+    }
+
+    function resetTiles() {
+        var tiles = document.getElementsByClassName("tile");
+        for (var i=0; i < tiles.length; i++) {
+            tiles[i].classList.remove('active');
+        }
+    }
+
+</script>
+</body>
+</html>
