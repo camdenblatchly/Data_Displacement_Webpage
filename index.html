@@ -157,7 +157,7 @@
         #methods_photo{
             background-image: url('src/construction-trainee.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
         }
 
         #findings_photo{
@@ -167,9 +167,29 @@
         }
 
         #project_team_photo{
-            background-image: url('src/child-selling-popcorn-camp.jpg');
+            background-image: url('src/RoK_Wau.jpg');
             background-size: cover;
             background-position: center;
+        }
+
+        #tools_photo{
+            background-image: url('src/Rehabilitation_Wau.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #drivers_photo {
+            background-image: url('src/child-selling-popcorn-camp.jpg');
+             background-size: cover;
+             background-position: center top;
+         }
+
+        .project_team_height {
+            padding: 50px;
+        }
+
+        .methods_height {
+            padding: 30px;
         }
 
     </style>
@@ -187,55 +207,75 @@
         <div class="col tile" id="section1"><a href="#about"> <h2>Overview</h2></a></div>
         <div class="col tile" id="section2"><a href="#methods"><h2>Methods</h2></a></div>
         <div class="col photo" id="section3"></div>
-        <div class="col tile" id="section4"><a href="" > <h2>Drivers of Movement</h2> </a></div>
+        <div class="col tile" id="section4"><a href="#drivers" > <h2>Drivers of Movement</h2> </a></div>
     </div>
     <div class="container-fluid row words" id="about">
-        <div class="col-sm-6">
-            <h1>Patterns of Migration</h1>
-            <p>Providing earlier and more accurate warnings of displacement is key to improving global
-                preparedeness to events of forced migration. Researchers at Georgetown University and York
-                University have developed a predictive model to determine how perception, buzz, and event variables gleaned from Big Data text mining techniques influence individual's perceived threat levels, thereby providing insight into their preferences and actions in the face of potential displacement.
+        <div class="col-sm-4">
+            <h1>Our Work</h1>
+            <p>This project aims to develop methods and approaches for using big data in conjunction with
+                traditional survey data to understand and eventually forecast mass movement of people who
+                are forced to migrate. Our initial case study is Iraq. The site will be used to highlight both the
+                theoretical and data driven methodologies that our project team uses as we advance research
+                in this space.
             </p>
         </div>
-        <div class="col-sm-6" id="about_photo"></div>
+        <div class="col-sm-8" id="about_photo"></div>
     </div>
     <div class="container-fluid row words" id="methods">
-        <div class="col-sm-6">
+        <div class="col-sm-3 methods_height">
             <h1>Research Methods</h1>
-            <p>We use local print and social media, specifically Twitter, to identify the changing dynamics of events and perceptions that may directly or indirectly have triggered displacement in and from Iraq over the last few years. The newspaper and print data are part of an archive of more than 700 million publicly available open-source media articles that has been actively compiled at Georgetown University since 2006 [Singh & Pemmaraju, 2017]. We also use over 1.5 billion tweets in English and Arabic from organizations and individuals that regularly post on developments in Iraq and related to relevant hashtags, including ones associated with extremist groups in the region. </p>
+            <p>Our interdisciplinary team of computer scientists, social scientists, and humanists bring their
+                disciplinary expertise to the problem of forced migration. Our high level method looks at ways
+                to integrate different methodologies to better understand the decision making process, as well
+                as the movement taking place.</p>
         </div>
-        <div class="col-sm-6" id="methods_photo"></div>
+        <div class="col-sm-9" id="methods_photo"></div>
+    </div>
+    <div class="container-fluid row words" id="drivers">
+        <div class="col-sm-4">
+            <h1>Drivers of Movement</h1>
+            <p>While there are a number of theories and frameworks explaining the drivers of movement, or
+                more specifically forced migration, many are very linear and do not adequately account for
+                shifts in patterns of displacement. This makes it difficult to understand when, where and how
+                displacement will take place. We propose a new theoretical model for capturing the drivers of
+                movement within the decision-making process.</p>
+        </div>
+        <div class="col-sm-8" id="drivers_photo"></div>
     </div>
     <div class="row">
         <div class="col tile" id="section5"><a href="#findings"><h2>Findings</h2></a></div>
         <div class="col photo" id="section6"></div>
-        <div class="col tile" id="section7"> <h2>Analytic Tools and Data</h2> </div>
+        <div class="col tile" id="section7"><a href="#tools"> <h2>Analytic Tools and Data</h2> </a></div>
         <div class="col tile" id="section8"><a href="#project_team"> <h2>Project Team</h2> </a></div>
     </div>
     <div class="container-fluid row words" id="findings">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <h1>Research Findings</h1>
-            <p>Since 2014 our interdisciplinary team has published results about forced migration, algorithms for extracting signals from unstructured data, and our project methodology. The project was founded
-                in collaboration with researchers at Georgetown University, York University, and Lawrence Livermore Laboratory with support from the National Science Foundation, the Georgetown University Massive
-                Data Institute, the Social Sciences and Humanities Research Council of Canada, and the Georgetown
-                Institute for the Study of Migration.</p>
+            <p>Since 2014 our interdisciplinary team has published results about forced migration, algorithms
+                for extracting signals from unstructured data and our project methodology. Our work has been
+                supported by the National Science Foundation (NSF), Social Sciences & Humanities Research
+                Council, Canada, and the Massive Data Institute (MDI).</p>
         </div>
-        <div class="col-sm-6" id="findings_photo"></div>
+        <div class="col-sm-8" id="findings_photo"></div>
+    </div>
+    <div class="container-fluid row words" id="tools">
+        <div class="col-sm-4">
+            <h1>Analytics Tools and Data</h1>
+            <p>Our indirect indicators of movement (big data variables) and exploratory tools are available to
+                social scientists studying forced migration. We have created both visual analytic tools and a
+                data portal to support research in this area. Our interactive visualizations attempt to highlight
+                the relationship between chatter and buzz from 100s of millions of tweets in both English and
+                Arabic on Twitter and ISIS movement through Iraq.</p>
+        </div>
+        <div class="col-sm-8" id="tools_photo"></div>
     </div>
     <div class="container-fluid row words" id="project_team">
-        <div class="col-sm-6">
-            <h2>Project Overview</h2>
-            <p>This project aims to develop methods and approaches for using big data in conjunction with traditional survey data to understand and eventually forecast mass movement of people who are forced to migrate. Our initial case study is Iraq and Syria. The site will be used to highlight both the theoretical and data driven methodologies that our project team uses, as we make progress.</p>
-            <h2>Project Founders</h2>
-            <ul>
-                <li>Lisa Singh, Georgetown University</li>
-                <li>Susan Martin, Georgetown University</li>
-                <li>Jeff Collmann, Georgetown University</li>
-                <li>Susan McGrath, York University</li>
-                <li>Sid Berkowitz, Georgetown University</li>
-            </ul>
+        <div class="col-sm-3 project_team_height">
+            <h2>Project Team</h2>
+            <p>We are an interdisciplinary collaborative across universities, NGOs, and national labs. The core
+                work takes place at Georgetown University and York University.</p>
         </div>
-        <div class="col-sm-6" id="project_team_photo"></div>
+        <div class="col-sm-9" id="project_team_photo"></div>
     </div>
     <div class="row footer">
         <p>Copyright 2019 Lisa Singh, Photos Copyright 2019 International Organization for Migration</p>
@@ -243,17 +283,20 @@
 </div>
 <script>
     document.getElementById("section1").onclick = function() {displaySection1()};
+    document.getElementById("section4").onclick = function() {displaySection4()};
     document.getElementById("section2").onclick = function() {displaySection2()};
     document.getElementById("section5").onclick = function() {displaySection5()};
+    document.getElementById("section7").onclick = function() {displaySection7()};
     document.getElementById("section8").onclick = function() {displaySection8()};
 
-    var sections = ["about", "findings", "picture", "project_team", "model", "picture", "methods", "viz"];
+    var sections = ["about", "findings", "picture","drivers", "project_team", "model", "picture", "tools", "methods", "viz"];
 
     function displaySection1() {
         if ( document.getElementById("section1").classList.contains('active')) {
             //document.getElementById("about").style.display = "none";
             document.getElementById("about").style.transform = "scaleY(0)";
             document.getElementById("about").style.height = "0px";
+            document.getElementById("about").style.padding = "0px";
             document.getElementById("section1").classList.remove('active');
         }
         else {
@@ -273,6 +316,7 @@
             //document.getElementById("methods").style.display = "none";
             document.getElementById("methods").style.height = "0px";
             document.getElementById("methods").style.transform = "scaleY(0)";
+            document.getElementById("methods").style.padding = "0px";
             document.getElementById("section2").classList.remove('active');
         }
         else {
@@ -286,12 +330,31 @@
         }
     }
 
+    function displaySection4() {
+        if ( document.getElementById("section4").classList.contains('active')) {
+            document.getElementById("drivers").style.height = "0px";
+            document.getElementById("drivers").style.transform = "scaleY(0)";
+            document.getElementById("drivers").style.padding = "0px";
+            document.getElementById("section4").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            //document.getElementById("methods").style.display = "flex";
+            document.getElementById("drivers").style.height = "auto";
+            document.getElementById("drivers").style.transform = "scaleY(1)";
+            document.getElementById("drivers").style.padding = "5px";
+            document.getElementById("section4").classList.add('active');
+        }
+    }
+
 
     function displaySection5() {
         if ( document.getElementById("section5").classList.contains('active')) {
             //document.getElementById("findings").style.display = "none";
             document.getElementById("findings").style.height = "0px";
             document.getElementById("findings").style.transform = "scaleY(0)";
+            document.getElementById("findings").style.padding = "0px";
             document.getElementById("section5").classList.remove('active');
         }
         else {
@@ -305,11 +368,29 @@
         }
     }
 
+    function displaySection7() {
+        if ( document.getElementById("section7").classList.contains('active')) {
+            document.getElementById("tools").style.height = "0px";
+            document.getElementById("tools").style.transform = "scaleY(0)";
+            document.getElementById("tools").style.padding = "0px";
+            document.getElementById("section7").classList.remove('active');
+        }
+        else {
+            resetWords();
+            resetTiles();
+            document.getElementById("tools").style.height = "auto";
+            document.getElementById("tools").style.transform = "scaleY(1)";
+            document.getElementById("tools").style.padding = "5px";
+            document.getElementById("section7").classList.add('active');
+        }
+    }
+
     function displaySection8() {
         if ( document.getElementById("section8").classList.contains('active')) {
             //document.getElementById("project_team").style.display = "none";
             document.getElementById("project_team").style.height = "0px";
             document.getElementById("project_team").style.transform = "scaleY(0)";
+            document.getElementById("project_team").style.padding = "0px";
             document.getElementById("section8").classList.remove('active');
         }
         else {
@@ -326,7 +407,7 @@
 
     function resetWords() {
         var words = document.getElementsByClassName("words");
-        for (var i=0; i < words.length; i++) {
+        for (let i=0; i < words.length; i++) {
             //words[i].style.display = "none";
             words[i].style.transform = "scaleY(0)";
             words[i].style.height = "0px";
@@ -336,7 +417,7 @@
 
     function resetTiles() {
         var tiles = document.getElementsByClassName("tile");
-        for (var i=0; i < tiles.length; i++) {
+        for (let i=0; i < tiles.length; i++) {
             tiles[i].classList.remove('active');
         }
     }
