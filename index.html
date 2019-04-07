@@ -10,6 +10,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <!-- animsition.css -->
+    <link rel="stylesheet" href="src/animsition/dist/css/animsition.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- animsition.js -->
+    <script src="src/animsition/dist/js/animsition.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
     <style>
         /* CSS  code */
@@ -108,10 +115,8 @@
             transform-origin: top;
             height: 0px;
 
-            transition: transform 0.2s ease;
-
+            transition: transform 0.4s ease, height 1s ease;
             overflow: hidden;
-
             text-align: left;
         }
 
@@ -185,7 +190,7 @@
          }
 
         .project_team_height {
-            padding: 50px;
+            padding: 40px;
         }
 
         .methods_height {
@@ -196,7 +201,7 @@
 </head>
 <body>
 <!-- HTML code -->
-<div class="container-fluid">
+<div class="container-fluid animsition">
     <div class="row">
         <div class="landing">
             <h1>Big Data and Displacement</h1>
@@ -218,6 +223,7 @@
                 theoretical and data driven methodologies that our project team uses as we advance research
                 in this space.
             </p>
+            <a href="overview/overview.html" class="animsition-link" >Learn More</a>
         </div>
         <div class="col-sm-8" id="about_photo"></div>
     </div>
@@ -228,6 +234,7 @@
                 disciplinary expertise to the problem of forced migration. Our high level method looks at ways
                 to integrate different methodologies to better understand the decision making process, as well
                 as the movement taking place.</p>
+            <a href="methods/methods.html" class="animsition-link" >Learn More</a>
         </div>
         <div class="col-sm-9" id="methods_photo"></div>
     </div>
@@ -239,6 +246,7 @@
                 shifts in patterns of displacement. This makes it difficult to understand when, where and how
                 displacement will take place. We propose a new theoretical model for capturing the drivers of
                 movement within the decision-making process.</p>
+            <a href="drivers-of-movement/drivers.html" class="animsition-link" >Learn More</a>
         </div>
         <div class="col-sm-8" id="drivers_photo"></div>
     </div>
@@ -255,6 +263,7 @@
                 for extracting signals from unstructured data and our project methodology. Our work has been
                 supported by the National Science Foundation (NSF), Social Sciences & Humanities Research
                 Council, Canada, and the Massive Data Institute (MDI).</p>
+            <a href="findings/findings.html" class="animsition-link" >Learn More</a>
         </div>
         <div class="col-sm-8" id="findings_photo"></div>
     </div>
@@ -266,6 +275,7 @@
                 data portal to support research in this area. Our interactive visualizations attempt to highlight
                 the relationship between chatter and buzz from 100s of millions of tweets in both English and
                 Arabic on Twitter and ISIS movement through Iraq.</p>
+            <a href="" class="animsition-link" >Learn More</a>
         </div>
         <div class="col-sm-8" id="tools_photo"></div>
     </div>
@@ -282,6 +292,34 @@
     </div>
 </div>
 <script>
+    $(document).ready(function() {
+        $(".animsition").animsition({
+            inClass: 'fade-in-down',
+            outClass: 'fade-out-down',
+            inDuration: 1500,
+            outDuration: 800,
+            linkElement: '.animsition-link',
+            // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+            loading: true,
+            loadingParentElement: 'body', //animsition wrapper element
+            loadingClass: 'animsition-loading',
+            loadingInner: '', // e.g '<img src="loading.svg" />'
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: [ 'animation-duration', '-webkit-animation-duration'],
+            // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            overlay : false,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'body',
+            transition: function(url){ window.location.href = url; }
+        });
+    });
+
+
+    var delayInMilliseconds = 400; //1 second
+
     document.getElementById("section1").onclick = function() {displaySection1()};
     document.getElementById("section4").onclick = function() {displaySection4()};
     document.getElementById("section2").onclick = function() {displaySection2()};
@@ -293,16 +331,15 @@
 
     function displaySection1() {
         if ( document.getElementById("section1").classList.contains('active')) {
-            //document.getElementById("about").style.display = "none";
             document.getElementById("about").style.transform = "scaleY(0)";
-            document.getElementById("about").style.height = "0px";
+            setTimeout(function() {
+                document.getElementById("about").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("about").style.padding = "0px";
             document.getElementById("section1").classList.remove('active');
         }
         else {
             resetWords();
             resetTiles();
-            //document.getElementById("about").style.display = "flex";
             document.getElementById("about").style.transform = "scaleY(1)";
             document.getElementById("about").style.height = "auto";
             document.getElementById("about").style.padding = "5px";
@@ -314,8 +351,10 @@
     function displaySection2() {
         if ( document.getElementById("section2").classList.contains('active')) {
             //document.getElementById("methods").style.display = "none";
-            document.getElementById("methods").style.height = "0px";
+            //document.getElementById("methods").style.height = "0px";
             document.getElementById("methods").style.transform = "scaleY(0)";
+            setTimeout(function() {
+                document.getElementById("methods").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("methods").style.padding = "0px";
             document.getElementById("section2").classList.remove('active');
         }
@@ -332,8 +371,10 @@
 
     function displaySection4() {
         if ( document.getElementById("section4").classList.contains('active')) {
-            document.getElementById("drivers").style.height = "0px";
+            //document.getElementById("drivers").style.height = "0px";
             document.getElementById("drivers").style.transform = "scaleY(0)";
+            setTimeout(function() {
+                document.getElementById("drivers").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("drivers").style.padding = "0px";
             document.getElementById("section4").classList.remove('active');
         }
@@ -352,8 +393,10 @@
     function displaySection5() {
         if ( document.getElementById("section5").classList.contains('active')) {
             //document.getElementById("findings").style.display = "none";
-            document.getElementById("findings").style.height = "0px";
+            //document.getElementById("findings").style.height = "0px";
             document.getElementById("findings").style.transform = "scaleY(0)";
+            setTimeout(function() {
+                document.getElementById("findings").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("findings").style.padding = "0px";
             document.getElementById("section5").classList.remove('active');
         }
@@ -370,8 +413,10 @@
 
     function displaySection7() {
         if ( document.getElementById("section7").classList.contains('active')) {
-            document.getElementById("tools").style.height = "0px";
+            //document.getElementById("tools").style.height = "0px";
             document.getElementById("tools").style.transform = "scaleY(0)";
+            setTimeout(function() {
+                document.getElementById("tools").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("tools").style.padding = "0px";
             document.getElementById("section7").classList.remove('active');
         }
@@ -388,8 +433,10 @@
     function displaySection8() {
         if ( document.getElementById("section8").classList.contains('active')) {
             //document.getElementById("project_team").style.display = "none";
-            document.getElementById("project_team").style.height = "0px";
+            //document.getElementById("project_team").style.height = "0px";
             document.getElementById("project_team").style.transform = "scaleY(0)";
+            setTimeout(function() {
+                document.getElementById("project_team").style.height = "0px"; }, delayInMilliseconds);
             document.getElementById("project_team").style.padding = "0px";
             document.getElementById("section8").classList.remove('active');
         }

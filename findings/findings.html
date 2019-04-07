@@ -10,6 +10,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+	<!-- animsition.css -->
+	<link rel="stylesheet" href="src/animsition/dist/css/animsition.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- animsition.js -->
+	<script src="src/animsition/dist/js/animsition.min.js"></script>
+
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
 
 	<style>
@@ -27,38 +34,73 @@
 	    	background-color: #fcfbf8;
 	    }
 
-	    .header {
-	    	margin: 0 auto;
-	    	text-align: left;
-	    }
-
 	    .footer {
             color: #A9A9A9;
             padding: 20px;
             bottom: 0;
         }
 
-	    .jumbotron .container h1 {
-	    	font-family: 'Libre Franklin', sans-serif;
-	    	font-weight: 500;
-	    }
+		.words {
+			padding: 20px;
+		}
 
+		.words h1 {
+			text-align: center;
+			font-size: 81px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		words h2 {
+			padding: 5px;
+		}
+
+		.words li {
+			padding: 10px;
+		}
+
+        i {
+            border: solid black;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        a {
+            color: black;
+        }
+
+        img {
+            padding-bottom: 25px;
+            padding-top: 25px;
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .header h1 {
+            text-align: center;
+            font-size: 81px;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
 
 	</style>
 </head>
 <body>
     <!-- HTML code -->
-    <div class="jumbotron jumbotron-fluid">
-	  	<div class="container">
-	    	<h1>Research Findings</h1>      
-	    	<p>Since 2014 our interdisciplinary team has published results about forced migration, algorithms for extracting signals from unstructured data and our project methodology.</p>
-	 	</div>
-	</div>
+	<div class="animsition">
     <div class="container">
+        <div class="header">
+            <a href="../index.html" class="animsition-link"><i class="arrow left"></i>back</a>
+            <h1>Research Findings</h1>
+        </div>
     	<div class="row words">
-    		<div class="col-sm-2"></div>
     		<div class="col-sm-8">
-
+				<h5>See below for a list of our published results about forced migration,
+					algorithms for extracting signals from unstructured data and our project methodology</h5>
     			<ul>
     				<li>Martin, S., Weerasinghe, S., & Taylor, A. (2014). <em>Migration and Humanitarian Crises: Causes, Consequences and Responses</em>. New York, NY: Routledge.</li>
 				  	<li>Wei, Y., Taylor, A., Yossinger, N. S., Swingewood, E., Cronbaugh, C., Quinn, D. R., et al. (2014). Using Large-scale Open Source Data to Identify Potential Forced Migration. <em>KDD Workshop on Data Science for Social Good</em>.</li>
@@ -74,12 +116,16 @@
 				  	<li>Wei Y., Singh L. (2018) Detecting Users Who Share Extremist Content on Twitter. In: Karampelas P., Bourlai T. (eds) <em>Surveillance in Action. Advanced Sciences and Technologies for Security Applications</em>. Springer, 351-368. </li>
     			</ul>
     		</div>
-    		<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+                <img src="../src/camp_profile.jpg" class="img-fluid" alt="Responsive image">
+                <img src="../src/camp_profile_2.jpg" class="img-fluid" alt="Responsive image">
+            </div>
     	</div>
     	<div class="row footer">
-            <p>Copyright 2019 Lisa Singh</p>
+            <p>Copyright 2019 Lisa Singh, Photos Copyright 2019 International Organization for Migration</p>
         </div>
     </div>
+	</div>
     <script>
         // JS code
     </script>

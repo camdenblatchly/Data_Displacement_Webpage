@@ -10,65 +10,125 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+	<!-- animsition.css -->
+	<link rel="stylesheet" href="src/animsition/dist/css/animsition.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- animsition.js -->
+	<script src="src/animsition/dist/js/animsition.min.js"></script>
+
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
 
 	<style>
-	    /* CSS  code */
-	    * {
-	    	font-family: 'Libre Baskerville', serif;
-	    }
+		/* CSS  code */
+		* {
+			font-family: 'Libre Baskerville', serif;
+		}
 
-	    h1, h2, h3, h4 {
-	    	font-family: 'Libre Franklin', sans-serif;
-	    	font-weight: 500;
-	    }
+		h1, h2, h3, h4 {
+			font-family: 'Libre Franklin', sans-serif;
+			font-weight: 500;
+		}
 
-	    body {
-	    	background-color: #fcfbf8;
-	    }
+		body {
+			background-color: #fcfbf8;
+		}
 
-	    .header {
-	    	margin: 0 auto;
-	    	text-align: left;
-	    }
+		.footer {
+			color: #A9A9A9;
+			padding: 20px;
+			bottom: 0;
+		}
 
-	    .footer {
-            color: #A9A9A9;
-            padding: 20px;
-            bottom: 0;
-        }
+		.words {
+			padding: 20px;
+		}
 
-	    .jumbotron .container h1 {
-	    	font-family: 'Libre Franklin', sans-serif;
-	    	font-weight: 500;
-	    }
+		.words h1 {
+			text-align: center;
+			font-size: 81px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		words h2 {
+			padding: 5px;
+		}
+
+		.words li {
+			padding: 10px;
+		}
+
+
+		.header h1 {
+			text-align: center;
+			font-size: 81px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		.figure {
+			padding-top: 75px;
+		}
+
+		i {
+			border: solid black;
+			border-width: 0 4px 4px 0;
+			display: inline-block;
+			padding: 3px;
+		}
+
+		a {
+			color: black;
+		}
+
+		.left {
+			transform: rotate(135deg);
+			-webkit-transform: rotate(135deg);
+		}
 
 	</style>
 </head>
 <body>
-    <!-- HTML code -->
-    <div class="jumbotron jumbotron-fluid">
-	  	<div class="container">
-	    	<h1>Research Methods</h1>
-	 	</div>
+<!-- HTML code -->
+<div class="animsition">
+	<div class="container">
+		<div class="header">
+			<a href="../index.html" class="animsition-link"><i class="arrow left"></i>back</a>
+			<h1>Research Methods</h1>
+		</div>
+		<div class="row words">
+			<div class="col-sm-6">
+				<p>Our high level combined methodology can be summarized in the figure to the right. We begin
+					by working with migration researchers to understand the broad factors people consider when
+					deciding whether or not to migrate (Step 1). <br><br>Our next step is to identify data sources for
+					relevant variables (Step 2).<br><br> Unfortunately, data collection and survey research are dangerous
+					and challenging in conflict zones and regions with high poverty or political instability. To fill this
+					gap, we identify alternative sources of data that can serve as indirect indicators of movement
+					for variables that cannot reasonably be collected directly (Step 3).<br><br> Specifically we focus on using
+					social media and newspaper data sources to fill this void. Step 4 focuses on determining which
+					conversation topics/signals are reasonable indirect indicators for specific conflict situations. For
+					example, is conversation about violence in Iraq a reasonable proxy for death counts - does a
+					relationship between the two exist? This step helps us map our indirect signals to the variables
+					that have been identified as theoretically important or as proxies for gaps in the data. This in
+					turn makes our modeling approach useful for both prediction, and understanding relationships
+					among drivers of movement.<br><br> Next, we consider different models for generating movement
+					predictions (Step 5).<br><br> Because we have spatial data and temporal data at different time
+					resolutions and spatial scales, we need models that can handle this variation effectively. Finally,
+					we must validate our results using any ground truth data that can be attained or through
+					manual validation (Step 6).</p>
+			</div>
+			<div class="col-sm-6 figure">
+				<img src="../src/drivers_figure.png" class="img-fluid" alt="Responsive image">
+			</div>
+		</div>
+		<div class="row footer">
+			<p>Copyright 2019 Lisa Singh, Photos Copyright 2019 International Organization for Migration</p>
+		</div>
 	</div>
-    <div class="container">
-    	<div class="row words">
-    		<div class="col-sm-2"></div>
-    		<div class="col-sm-8">
-    			<p>We use local print and social media, specifically Twitter, to identify the changing dynamics of events and perceptions that may directly or indirectly have triggered displacement in and from Iraq over the last few years. The newspaper and print data are part of an archive of more than 700 million publicly available open-source media articles that has been actively compiled at Georgetown University since 2006 [Singh & Pemmaraju, 2017]. We also use over 1.5 billion tweets in English and Arabic from organizations and individuals that regularly post on developments in Iraq and related to relevant hashtags, including ones associated with extremist groups in the region.
-    			<br><br>
-				The Institute for the Study of Migration (ISIM) at Georgetown University and York Center for Refugee Studies have also conducted extensive field work in Iraq and Syria. Our big data sources will be used to augment these more traditional migration studies.
-				</p>
-    		</div>
-    		<div class="col-sm-2"></div>
-    	</div>
-    	<div class="row footer">
-            <p>Copyright 2019 Lisa Singh</p>
-        </div>
-    </div>
-    <script>
-        // JS code
-    </script>
-</body>	
+</div>
+<script>
+	// JS code
+</script>
+</body>
 </html>
