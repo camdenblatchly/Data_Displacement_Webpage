@@ -11,13 +11,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- animsition.css -->
-    <link rel="stylesheet" href="src/animsition/dist/css/animsition.min.css">
+    <link rel="stylesheet" href="../src/animsition/dist/css/animsition.min.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- animsition.js -->
-    <script src="src/animsition/dist/js/animsition.min.js"></script>
+    <script src="../src/animsition/dist/js/animsition.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
+
+    <script src="../src/navigation.js"></script>
+    <link rel="stylesheet" href="../css/navigation.css">
 
     <style>
         /* CSS  code */
@@ -92,10 +95,25 @@
 <body>
 <!-- HTML code -->
 <div class="animsition">
+    <div id="overlay">
+        <div id="text">
+            <a class="animsition-link" href="../index.html"><h1>Home</h1></a>
+            <a class="animsition-link" href="../overview/overview.html"><h1>Overview</h1></a>
+            <a class="animsition-link" href="../methods/methods.html"><h1>Methods</h1></a>
+            <a class="animsition-link" href="../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+            <a class="animsition-link" href="../findings/findings.html"><h1>Findings</h1></a>
+            <a class="animsition-link" href=""><h1>Analytics Tools and Data</h1></a>
+            <a class="animsition-link" href="../project-team/project-team.html"><h1>Project Team</h1></a>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
-            <a href="../index.html" class="animsition-link"><i class="arrow left"></i>back</a>
-            <h1>Drivers of Movement</h1>
+            <div class="menu_container" onclick="menuFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <h1>Overview</h1>
         </div>
         <div class="row words">
             <div class="col-sm-6">
