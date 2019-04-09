@@ -27,7 +27,7 @@ var banner = [
 ''].join('\n');
 
 var dirs = {
-  src:'./src',
+  src:'./img',
   dist:'./dist',
   sandbox:'./sandbox'
 };

@@ -22,7 +22,7 @@
         loading               :    true,
         loadingParentElement  :   'body', //animsition wrapper element
         loadingClass          :   'animsition-loading',
-        loadingInner          :   '', // e.g '<img src="loading.svg" />'
+        loadingInner          :   '', // e.g '<img img="loading.svg" />'
         timeout               :   false,
         timeoutCountdown      :   5000,
         onLoadEvent           :   true,
