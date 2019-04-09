@@ -18,6 +18,8 @@
     <script src="src/animsition/dist/js/animsition.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/navigation.css">
     <style>
         /* CSS  code */
 
@@ -53,7 +55,7 @@
         }
 
         .landing {
-            height: 550px;
+            height: 500px;
             margin: 0 auto;
             padding-top: 150px;
             text-align: center;
@@ -202,6 +204,24 @@
 <body>
 <!-- HTML code -->
 <div class="container-fluid animsition">
+    <div id="overlay">
+        <div id="text">
+            <a class="animsition-link" href=""><h1>Home</h1></a>
+            <a class="animsition-link" href="overview/overview.html"><h1>Overview</h1></a>
+            <a class="animsition-link" href="methods/methods.html"><h1>Methods</h1></a>
+            <a class="animsition-link" href="drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+            <a class="animsition-link" href="findings/findings.html"><h1>Findings</h1></a>
+            <a class="animsition-link" href=""><h1>Analytics Tools and Data</h1></a>
+            <a class="animsition-link" href="project-team/project-team.html"><h1>Project Team</h1></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="menu_container" onclick="menuFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
     <div class="row">
         <div class="landing">
             <h1>Big Data and Displacement</h1>
@@ -317,6 +337,27 @@
             transition: function(url){ window.location.href = url; }
         });
     });
+
+    function menuFunction(x) {
+
+        if (x.classList.contains("change")) {
+            off();
+        }
+        else {
+            on();
+        }
+        x.classList.toggle("change");
+    }
+
+    function on() {
+        document.getElementById("text").style.opacity = "1.0";
+        document.getElementById("overlay").style.height = "100%";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.height = "0px";
+        document.getElementById("text").style.opacity = "0.0";
+    }
 
 
     var delayInMilliseconds = 400; //1 second
