@@ -75,3 +75,8 @@
 #text a:hover {
     text-decoration: underline;
 }
+
+.disable_links {
+    pointer-events: none;
+    cursor: default;
+}

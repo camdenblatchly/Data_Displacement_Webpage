@@ -205,7 +205,7 @@
 <!-- HTML code -->
 <div class="container-fluid animsition">
     <div id="overlay">
-        <div id="text">
+        <div id="text" class="disable_links">
             <a class="animsition-link" href=""><h1>Home</h1></a>
             <a class="animsition-link" href="overview/overview.html"><h1>Overview</h1></a>
             <a class="animsition-link" href="methods/methods.html"><h1>Methods</h1></a>
@@ -352,11 +352,13 @@
     function on() {
         document.getElementById("text").style.opacity = "1.0";
         document.getElementById("overlay").style.height = "100%";
+        document.getElementById("text").classList.toggle("disable_links");
     }
 
     function off() {
         document.getElementById("overlay").style.height = "0px";
         document.getElementById("text").style.opacity = "0.0";
+        document.getElementById("text").classList.toggle("disable_links");
     }
 
 

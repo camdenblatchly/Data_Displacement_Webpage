@@ -39,9 +39,11 @@ function menuFunction(x) {
 function on() {
     document.getElementById("text").style.opacity = "1.0";
     document.getElementById("overlay").style.height = "100%";
+    document.getElementById("text").classList.toggle("disable_links");
 }
 
 function off() {
     document.getElementById("overlay").style.height = "0px";
     document.getElementById("text").style.opacity = "0.0";
+    document.getElementById("text").classList.toggle("disable_links");
 }
