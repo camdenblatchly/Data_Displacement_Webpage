@@ -64,7 +64,8 @@
 }
 
 #text h1 {
-    font-size:3.5vw;
+    font-size: 6vh;
+    line-height: 1.8;
 }
 
 #text a {
