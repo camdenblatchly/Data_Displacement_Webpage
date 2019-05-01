@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapping Twitter Chatter in Iraq</title>
+    <meta charset="UTF-8">
+<!--         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+--> <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="data/bar_data.js"></script>
+
+    <script src="data/eng_all_map.js"></script>
+    <script src="data/eng_neg_map.js"></script>
+    <script src="data/eng_pos_map.js"></script>
+    <script src="data/arabic_all_map.js"></script>
+    <script src="data/arabic_neg_map.js"></script>
+    <script src="data/arabic_pos_map.js"></script>
+    <script src="data/iom_map.js"></script>
+
+
+    <script src="data/region_cases.js"></script>
+    <script src="data/region_events.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <script src="data/map_settings.js"></script>
+    <script src="data/SyrAndIrq.js"></script>
+    <script src="js/topojson.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/linechart.js"></script>
+
+    <script src="data/medical_centres_geo.js"></script>
+    <script src="data/medical_centres.js"></script>
+
+    <script src="js/animsition/dist/js/animsition.min.js"></script>
+    <link rel="stylesheet" href="js/animsition/dist/css/animsition.min.css">
+
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="animsition">
+    <div id="overlay">
+            <div id="text" class="disable_links">
+                <a class="animsition-link" href="../../../index.html"><h1>Home</h1></a>
+                <a class="animsition-link" href="../../../overview/overview.html"><h1>Overview</h1></a>
+                <a class="animsition-link" href="../../../methods/methods.html"><h1>Methods</h1></a>
+                <a class="animsition-link" href="../../../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+                <a class="animsition-link" href="../../../findings/findings.html"><h1>Findings</h1></a>
+                <a class="animsition-link" href=""><h1>Analytics Tools and Data</h1></a>
+                <a class="animsition-link" href="../../../project-team/project-team.html"><h1>Project Team</h1></a>
+            </div>
+        </div>
+    <div class="container">
+        <div class="header">
+            <div class="menu_container" onclick="menuFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <div id="super">
+            <div class="row">
+            <div class="landing">
+                <h1>Mapping Twitter Chatter in Iraq</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p> The rapid expansion of the Islamic State (IS) across different parts of Iraq and the dramatic escalation of violence in late 2013 has caused millions of Iraqis to flee their homes. Here we attempt to understand the relationship between chatter and buzz on Twitter and the IS movement through Iraq. We use hundreds of millions of tweets related to IS to investigate chatter volume, sentiment of tweets involving IS related hashtags in both English and Arabic.
+                <br><br>
+                Because we are interested in movement as individuals flee IS, we collected tweets containing #ISIS and داعش‎# . The figures below describe this data and how it relates to movement.
+                <br><br>
+                Detailed Views on <a href="mosul_offensive_jan15/index.htm">Mosul Offensive</a> and <a href="fallujah_offensive/index.htm">Fallujah Offensive</a></p>
+                <br>
+                <h3>Scaled Dynamics of Chatter</h3>
+                <p>In order to gain insights in how IS affects movement, we created localized signals from the #ISIS and داعش‎# tweets. This map shows the number (volume) and sentiment of ISIS tweets mentioning a location within a given governorate over time.
+                <br><br>
+                This map also shows events that occurred within each governorate. Click on each bubble to learn more about what was happening in a governorate in a given month.</p>
+                <br><br>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+                       <!-- text(events) list area-->
+                        <div class="row">
+                            <div class="col">
+                                <div id="textMap" class="col-md-12 hidden"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- text -->
+                            <div class="col">
+                                <div id="week" class="col-md-12"></div>
+                            </div>                             
+
+                            <!-- radio button -->
+                            <div class="row" id="radio_bt">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                <form>
+                                    <fieldset id="group2">
+                                        <input type="radio" id="test11" class="m" name="group2" value="all_eng"  checked="yes">
+                                        <label for="test11">English Total Volume</label>
+                                        <input type="radio" id="test21" class="m" name="group2" value="all_arabic" >
+                                        <label for="test21">Arabic Total Volume</label>
+                                        <input type="radio" id="test31" class="m" name="group2" value="positive_eng">
+                                        <label for="test31">Positive English</label>
+                                        <input type="radio" id="test51" class="m" name="group2" value="positive_arabic">
+                                        <label for="test51">Positive Arabic</label>
+                                        <input type="radio" id="test41" class="m" name="group2" value="negative_eng">
+                                        <label for="test41">Negative English</label>
+                                        <input type="radio" id="test61" class="m" name="group2" value="negative_arabic">
+                                        <label for="test61">Negative Arabic</label>
+                                        <input type="radio" id="test71" class="m" name="group2" value="iom_count">
+                                        <label for="test71"> Displaced Family Count</label>                             
+                                        <input type="radio" id="test81" class="m" name="group2" value="death"> 
+                                        <label for="test81">Death</label>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="col-md-2"></div>
+                            </div>
+
+
+                            <div class="col" id="play_button">
+                                <p><span class="playPause paused"></span> &nbsp;Autoplay </p>
+                            </div> 
+                            
+                        </div>
+
+                        <!-- Time axis -->
+                        <div class="row">
+                            <div id = "wrap">
+                                <div id="timeaxis" class="col-md-12"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- map -->
+                        <div class="row">
+                            <div class="col">
+                                <div id="map" class="col-md-12"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <p>
+                                This line chart allows for comparison by displaying the percent change each month from the previous month. One interesting takeaway is that the number of new families displaced from month to month does not change as drastically as social media signals.
+
+                                The comparison between English and Arabic signals is more clear in this chart. There is a clear correlation, but also considerable variability between the two.
+
+                                This chart also highlights that while positive and negative sentiment in English are closely tied, there is divergence between the positive and negative signals in Arabic. This suggests that in Arabic, each may be capturing something slightly different.
+                                </p>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+    	                        
+    	                    <!-- linechart -->
+    	                    <div id="line_chart"  style="padding-left:3.5%; position:relative; width:91%; height:250px; display:inline-block; margin-top: 20px;"></div>   
+                        	
+                        </div>
+
+        <div class="row final-notes">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <P> These charts provide a few take away messages:</P>
+                <P>
+                <UL>
+                <LI>English sentiment is always more negative than positive.</LI>
+                <LI>Arabic sentiment changes through time in terms of whether ir is more positive or more negative.</LI>
+                <LI>Different spikes in volume map directly to different large IS attacks (Ramadi & Mosul) or events.</LI>
+                <LI>Arabic volume and sentiment seem to be leading movement indicators of where people are going. English volume is also a leading indicator, but not as clear.</LI>
+                <LI> Strong relationships exist between tweet volume in English and Arabic, tweet sentiment in Arabic, death counts, and movement. This means that these
+                variables are reasonable indirect indicators.
+                </UL></UL> 
+                </P>   
+            </div>
+        <div class="col-md-2"></div>
+        </div>                     
+    </div>
+    </div>
+</div>
+
+
+        <script src="js/sitebarchart.js"></script>
+        <script src="js/sitebarchart_ar.js"></script>
+        <script src="js/site.js"></script>
+    </body>
+</html>

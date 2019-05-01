@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+
+	
+	<center>
+		<title>Mosul Offensive</title>
+	</center>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<script src="js/sorttable.js"></script>
+	<script src="js/d3.v4.min.js"></script>
+	<script src="js/barandLine.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/site.css"/>    
+
+    <script src="data/all_map.js"></script>
+    <script src="data/map_settings.js"></script>
+    <script src="data/SyrAndIrq.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <script src="js/button_event.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
+
+
+	<body>
+	<div class="container">
+	<div class="container">			
+			<div class="landing">
+                <h1>Mosul Offensive (2015)</h1>
+            </div>
+        	<div class="row">
+        		<div class="col-md-2"></div>
+        		<div class="col-md-8">
+        			<h3>Background</h3>
+                	<p>
+                		ISIS had control over Mosul since its fall in June of 2014. On January 21st, 2015, the Kurdish Peshmerga launched an offensive to cut off key ISIS supply routes and create a partial siege in anticipation of an Iraqi offensive to re-take the city. The offensive was intended to liberate Kurdish areas to the North-East of Mosul. 
+						Over a 20 day period, the Peshmerga moved toward the city with air support from the US-led Combined Joint Task Force. They opened up a new front to the north-west, liberated Kurdish villages. On February 10th, the Peshmerga stopped their advance 6-9 miles away from the city center. The Peshmerga were able to hold the new front-line with CJTF air support, with violence continuing through the rest of the year. 
+						Before Iraqi forces could re-take the city, Ramadi fell in May of 2017 after a nearly 6-month battle. Iraqi Forces were unable to launch on offensive to re-take Mosul until 2016. 
+                	</p>
+           		</div>
+           		<div class="col-md-2"></div>
+            </div>			
+			<div id = "container">
+
+		        <div id=" panel">
+	                <div class="row">
+	                    <!-- text -->
+	                    	<div class="col-md-2"></div>
+	                    	<div id="week1" class="col-md-8"></div>
+	                    	<div class="col-md-2"></div>
+
+	                  	</div>
+	                  	<div class="row">
+		                  	<div class="col-md-2"></div>
+		                  	<div class="col-md-8">
+		                  		<P>This map shows the number destinations of families fleeing from Ninawa in the time surrounding the siege. We can see that families tend not to travel toward Anbar, a desert, despite its proximity. We also see that the majority of people remain somewhere within Ninawa when they flee their homes, or travel to the nearby governorates of Dahuk, Erbil, and Kirkuk. Finally, around January the number of people fleeing becomes negative. This may be because IDPs are traveling to secondary destinations. Because there was an ongoing battle in January, there may have been fewer new IDPs to replenish the number leaving each governorate for a secondary destination.</P>
+		                  	</div>
+		                  	<div class="col-md-2"></div>
+	                  	</div>
+	                  	<div class="row" id ="play_button">
+		                    <div class="col-lg-2">
+		                        <p><span class="playPause1 paused"></span> &nbsp;Autoplay </p>
+		                    </div> 
+	                	</div>
+	               	</div>
+
+		                <!-- Time axis -->
+		        <div class="row">
+		            <div id = "wrap1">
+		                <div id="timeaxis1" class="col-md-12"></div>
+		            </div>
+		        </div>
+		              <!-- map -->
+		        <div class="row">
+		            <div class="col">
+		                <div id="map1" class="col-md-12"></div>
+		            </div>
+		        </div>
+		               
+		                
+		        </div>
+
+		    </div>
+
+		    <div class="container-fluid">
+				<div class="row" id="bar_charts">
+					<div class="col">
+						<span style=" z-index: 2; margin-top: 400px;position: absolute;width:150px;left: 80px">* Click names of variables to hide/show bars</span>
+						<div id="barchart" style="height: 450px; width: 950px; margin:80px;"></div>
+						<div style="margin: 80px">
+							<div id="barchart_arabic" style="height: 400px; width: 430px;display: inline-block"></div>
+							<div id="barchart_eng" style="height: 400px; width: 430px;display: inline-block;margin-left:40px;"></div>
+						</div>
+						<div style="display: block; z-index: 3;margin-top: 25px; position:absolute;width:300px;left: 150px;">
+							<button onclick="btn_movement_function()" id="myBtn1">Change Timescale</button>
+						</div>
+						<div class="linechartStyle">
+							<div id="changebarchartNumofFam" style=" width: 950px;left: 80px;position: absolute;"></div>
+							<div id="barchartNumofFam" style="width: 950px; left: 80px; display: block;position: absolute;	 "></div>
+						</div>
+						
+
+						<div class="timeline_events_details">
+			            	<!--p>
+			            		add text to bar chart
+			            	</p-->
+			            </div>
+
+			            <div style="display: block; z-index: 3;margin-top: 130px;position:absolute;width:200px;left: 80px">
+							<button onclick="myFunctionButton()" id="myBtn">Change Y Axis Scale </button>
+							<button onclick="myFunctionButton1()" id="myBtn1">Change Timescale</button>
+						</div>
+						<span style=" z-index: 2; margin-top: 320px;position: absolute;width:150px;left: 80px;display: block">* Click names of variables to hide/show lines</span>
+						<div class="linechartStyle">
+							<div id="linechartChangeScale" style="width: 950px;left: 80px;position: absolute" ></div>
+							<div id="linecharScalexy" style="width: 950px;left: 80px;position: absolute"></div>
+							<div id="linechartNormYScaleChangeX" style="width: 950px;left: 80px;position: absolute"></div>
+							<div id="linechartNormScale" style="display: block;width: 950px;left: 80px;position: absolute"></div>
+						</div>
+
+						<P></P>
+
+						<P></P>
+
+						
+					    <P>
+					    <center>
+						<a href="table.htm">Detailed Table of Family Movements from Ninawa Governorate</a>
+						</center>
+						</P>
+					</div>
+			</div>
+			</div>
+
+			<script src="js/canvasjs.min.js"></script>
+			<script src="js/site.js"></script>
+
+
+
+</div>
+</div>
+</body>
+</html>
+
+

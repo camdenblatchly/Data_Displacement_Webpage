@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html>
+
+<script src="js/sorttable.js"></script>
+	<script src="js/d3.v4.min.js"></script>
+	<script src="js/barandLine.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css"/>
+    <script src="js/jquery.js"></script>
+    
+
+    <script src="data/all_map.js"></script>
+    <script src="data/map_settings.js"></script>
+    <script src="data/SyrAndIrq.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <script src="js/button_event.js"></script>
+
+<body>
+	
+	<div style="display: block;margin-left: auto;width: 90%;max-width: 950px; margin-left: 15%;">
+		    	<button onclick="tableButtonTotal()" id="Btn_table_total">Total Movements</button>&nbsp;&nbsp;
+				<button onclick="tableButtonBefore()" id="Btn_table_before">Movements before the Battle </button>&nbsp;&nbsp;
+				<button onclick="tableButtonDuring()" id="Btn_table_during">Movements during the Battle</button>&nbsp;&nbsp;
+				<button onclick="tableButtonAfter()" id="Btn_table_after">Movements after the Battle</button>
+				
+			</div>
+		    <div class="timeline_events_title_table" id="total_table" style="display: block;">
+	            <h4 align="center">Total Movements from Ninawa Governorate between Oct. 2014 and May 2015</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th>Governorate</th>
+					    <th>Number of Families</th>
+					    <th>Distance from Mosul(Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>0</td>
+				    <td>409</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>1710</td>
+				    <td>528</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>5551</td>
+				    <td>415</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>162</td>
+				    <td>945</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-797</td>
+				    <td>74</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>54</td>
+				    <td>365</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>2204</td>
+				    <td>86</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>2044</td>
+				    <td>521</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>4934</td>
+				    <td>173</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>72</td>
+				    <td>783</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>565</td>
+				    <td>686</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>520</td>
+				    <td>585</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>10265</td>
+				    <td>0</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>391</td>
+				    <td>605</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>6</td>
+				    <td>227</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>774</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-17</td>
+				    <td>759</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>1214</td>
+				    <td>592</td>
+				  </tr>
+
+				</table>
+			</div>
+
+		    <div class="timeline_events_title_table" id="before_table" style="display: none;">
+	            <h4 align="center">Total Movements from Ninawa Governorate between Oct. 2014 and Dec. 2014</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th>Governorate</th>
+					    <th>Number of Families</th>
+					    <th>Distance from Mosul (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>0</td>
+				    <td>409</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>1199</td>
+				    <td>528</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>1718</td>
+				    <td>415</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>192</td>
+				    <td>945</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>5933</td>
+				    <td>74</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>0</td>
+				    <td>365</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>1070</td>
+				    <td>86</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>1193</td>
+				    <td>521</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>1780</td>
+				    <td>173</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>69</td>
+				    <td>783</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>0</td>
+				    <td>686</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>421</td>
+				    <td>585</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>5031</td>
+				    <td>0</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>235</td>
+				    <td>605</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>0</td>
+				    <td>227</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>1145</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>98</td>
+				    <td>759</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>381</td>
+				    <td>592</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<div class="timeline_events_title_table" id="after_table" style="display: none;">
+	            <h4 align="center">Total Movements from Ninawa Governorate between Mar. 2015 and May 2015</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th>Governorate</th>
+					    <th>Number of Families</th>
+					    <th>Distance from Mosul (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>0</td>
+				    <td>409</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>226</td>
+				    <td>528</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>432</td>
+				    <td>415</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>9</td>
+				    <td>945</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-309</td>
+				    <td>74</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>0</td>
+				    <td>365</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>3259</td>
+				    <td>86</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>448</td>
+				    <td>521</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>1506</td>
+				    <td>173</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>-5</td>
+				    <td>783</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>565</td>
+				    <td>686</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>237</td>
+				    <td>585</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>1829</td>
+				    <td>0</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>803</td>
+				    <td>605</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>-1</td>
+				    <td>227</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>-113</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>95</td>
+				    <td>759</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>1032</td>
+				    <td>592</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<div class="timeline_events_title_table" id="during_table" style="display: none;">
+	            <h4 align="center">Total Movements from Ninawa Governorate between Jan. 2015 and Feb. 2015</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th>Governorate</th>
+					    <th>Number of Families</th>
+					    <th>Distance from Mosul (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>0</td>
+				    <td>409</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>285</td>
+				    <td>528</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>3401</td>
+				    <td>415</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>-39</td>
+				    <td>945</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-6421</td>
+				    <td>74</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>56</td>
+				    <td>365</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>-2125</td>
+				    <td>86</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>403</td>
+				    <td>521</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>1648</td>
+				    <td>173</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>8</td>
+				    <td>783</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>0</td>
+				    <td>686</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>-138</td>
+				    <td>585</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>3405</td>
+				    <td>0</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>-647</td>
+				    <td>605</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>0</td>
+				    <td>227</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>-258</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-210</td>
+				    <td>759</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>-199</td>
+				    <td>592</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<script src="js/canvasjs.min.js"></script>
+			<script src="js/site.js"></script>
+
+</html>
+</body>
+
+

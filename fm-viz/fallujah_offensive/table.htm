@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+
+<script src="js/sorttable.js"></script>
+	<script src="js/d3.v4.min.js"></script>
+	<script src="js/barandLine.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css"/>
+    <script src="js/jquery.js"></script>
+    
+
+    <script src="data/all_map.js"></script>
+    <script src="data/map_settings.js"></script>
+    <script src="data/SyrAndIrq.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <script src="js/button_event.js"></script>
+
+<body>
+
+
+
+
+			<div style="display: block;margin-left: auto;width: 90%;max-width: 950px; margin-left: 15%;">
+		    	<button onclick="tableButtonTotal()" id="Btn_table_total">Total Movements</button>&nbsp;&nbsp;
+				<button onclick="tableButtonBefore()" id="Btn_table_before">Movements before the Battle </button>&nbsp;&nbsp;
+				<button onclick="tableButtonDuring()" id="Btn_table_during">Movements during the Battle</button>&nbsp;&nbsp;
+				<button onclick="tableButtonAfter()" id="Btn_table_after">Movements after the Battle</button>
+				
+			</div>
+		    <div class="timeline_events_title_table" id="total_table" style="display: block;">
+	            <h4 align="center">Total Movements from Anbar Governorate between Feb. 2016 and Sep. 2016</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th width="300px">Governorate</th>
+					    <th width="200px">Number of Families</th>
+					    <th width="300px">Distance from Fallujah (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>-1305</td>
+				    <td>0</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>-1319</td>
+				    <td>157</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>-14429</td>
+				    <td>63</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>-58</td>
+				    <td>574</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-225</td>
+				    <td>472</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>31</td>
+				    <td>134</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>-1098</td>
+				    <td>385</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>-389</td>
+				    <td>121</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>-3353</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>-91</td>
+				    <td>440</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>-38</td>
+				    <td>314</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>-108</td>
+				    <td>214</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>51</td>
+				    <td>399</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>-269</td>
+				    <td>234</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>-246</td>
+				    <td>170</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>-303</td>
+				    <td>400</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-91</td>
+				    <td>386</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>-168</td>
+				    <td>282</td>
+				  </tr>
+
+				</table>
+			</div>
+
+		    <div class="timeline_events_title_table" id="before_table" style="display: none;">
+	            <h4 align="center">Total Movements from Anbar Governorate between Feb. 2016 and Apr. 2016</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th width="300px">Governorate</th>
+					    <th width="200px">Number of Families</th>
+					    <th width="300px">Distance from Fallujah (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>2220</td>
+				    <td>0</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>-367</td>
+				    <td>157</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>-3233</td>
+				    <td>63</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>21</td>
+				    <td>574</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-180</td>
+				    <td>472</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>126</td>
+				    <td>134</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>484</td>
+				    <td>385</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>5</td>
+				    <td>121</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>-35</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>-22</td>
+				    <td>440</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>11</td>
+				    <td>314</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>-3</td>
+				    <td>214</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>48</td>
+				    <td>399</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>-125</td>
+				    <td>234</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>-235</td>
+				    <td>170</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>383</td>
+				    <td>400</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-27</td>
+				    <td>386</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>-22</td>
+				    <td>282</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<div class="timeline_events_title_table" id="after_table" style="display: none;">
+	            <h4 align="center">Total Movements from Anbar Governorate between Jul. 2016 and Sep. 2016</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th width="300px">Governorate</th>
+					    <th width="200px">Number of Families</th>
+					    <th width="300px">Distance from Fallujah (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>-12891</td>
+				    <td>0</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>-771</td>
+				    <td>157</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>-9900</td>
+				    <td>63</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>-47</td>
+				    <td>574</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-32</td>
+				    <td>472</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>-51</td>
+				    <td>134</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>-2094</td>
+				    <td>385</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>-408</td>
+				    <td>121</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>-2927</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>-10</td>
+				    <td>440</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>-61</td>
+				    <td>314</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>-104</td>
+				    <td>214</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>4</td>
+				    <td>399</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>-72</td>
+				    <td>234</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>-67</td>
+				    <td>170</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>-663</td>
+				    <td>400</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-57</td>
+				    <td>386</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>-121</td>
+				    <td>282</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<div class="timeline_events_title_table" id="during_table" style="display: none;">
+	            <h4 align="center">Total Movements from Anbar Governorate between May 2016 and Jun. 2016</h4>
+
+	            <link href="css/font-awesome.min.css" rel="stylesheet">        	
+	        
+				<table class="sortable" align="center" style="width:800px">
+					<thead>
+					  <tr>
+
+					    <th width="300px">Governorate</th>
+					    <th width="200px">Number of Families</th>
+					    <th width="300px">Distance from Fallujah (Kilometers)</th>
+					  </tr>
+					</thead>
+				  <tr>
+				    <td>Anbar</td>
+				    <td>9366</td>
+				    <td>0</td>
+
+				  </tr>
+				  <tr>
+				    <td>Babylon</td>
+				    <td>-181</td>
+				    <td>157</td>
+
+				  </tr>
+				  <tr>
+				    <td>Baghdad</td>
+				    <td>-1296</td>
+				    <td>63</td>
+
+				  </tr>
+				  <tr>
+				    <td>Basrah</td>
+				    <td>-32</td>
+				    <td>574</td>
+				  </tr>
+				  <tr>
+				    <td>Dahuk</td>
+				    <td>-13</td>
+				    <td>472</td>
+				  </tr>
+				  <tr>
+				    <td>Diyala</td>
+				    <td>-44</td>
+				    <td>134</td>
+				  </tr>
+				  <tr>
+				    <td>Erbil</td>
+				    <td>512</td>
+				    <td>385</td>
+				  </tr>
+				  <tr>
+				    <td>Karbala</td>
+				    <td>14</td>
+				    <td>121</td>
+				  </tr>
+				  <tr>
+				    <td>Kirkuk</td>
+				    <td>-391</td>
+				    <td>288</td>
+				  </tr>
+				  <tr>
+				    <td>Missan</td>
+				    <td>-59</td>
+				    <td>440</td>
+				  </tr>
+				  <tr>
+				    <td>Muthanna</td>
+				    <td>12</td>
+				    <td>314</td>
+				  </tr>
+				  <tr>
+				    <td>Najaf</td>
+				    <td>-1</td>
+				    <td>214</td>
+				  </tr>
+				  <tr>
+				    <td>Ninawa</td>
+				    <td>-1</td>
+				    <td>399</td>
+				  </tr>
+				  <tr>
+				    <td>Qadissiya</td>
+				    <td>-72</td>
+				    <td>234</td>
+				  </tr>
+				  <tr>
+				    <td>Salah al-Din</td>
+				    <td>-78</td>
+				    <td>170</td>
+				  </tr>
+				  <tr>
+				    <td>Sulaymaniyah</td>
+				    <td>-23</td>
+				    <td>400</td>
+				  </tr>
+				  <tr>
+				    <td>Thi-Qar</td>
+				    <td>-7</td>
+				    <td>386</td>
+				  </tr>
+				  <tr>
+				    <td>Wasit</td>
+				    <td>-25</td>
+				    <td>282</td>
+				  </tr>
+
+				</table>
+			</div>
+
+			<script src="js/canvasjs.min.js"></script>
+			<script src="js/site.js"></script>
+
+
+</html>
+</body>
