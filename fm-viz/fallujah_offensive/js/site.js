@@ -299,7 +299,7 @@ function generateMap(){
 
 
 function transitionMap(){
-    $('#week1').html("<center><h4>Number of Families Who Have Fled from Anbar Governorate</h4></center>");
+    $('#week1').html("<h4>Number of Families Who Have Fled from Anbar Governorate</h4>");
 
     var projection = d3.geoMercator()
         .center([mapSettings[currentWeek].lng,mapSettings[currentWeek].lat])

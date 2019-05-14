@@ -24,12 +24,37 @@
     <script src="js/d3-tip.js"></script>
     <script src="js/button_event.js"></script>
 
+    <script src="js/animsition/dist/js/animsition.min.js"></script>
+    <link rel="stylesheet" href="js/animsition/dist/css/animsition.min.css">
+
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/navigation.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
 
 
 	<body>
+	<div class="animsition">
+		<div id="overlay" class="container">
+        <div id="text" class="disable_links">
+            <a class="animsition-link" href="../../index.html"><h1>Home</h1></a>
+            <a class="animsition-link" href="../../overview/overview.html"><h1>Overview</h1></a>
+            <a class="animsition-link" href="../../methods/methods.html"><h1>Methods</h1></a>
+            <a class="animsition-link" href="../../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+            <a class="animsition-link" href="../../findings/findings.html"><h1>Findings</h1></a>
+            <a class="animsition-link" href="../index.html"><h1>Analytics Tools and Data</h1></a>
+            <a class="animsition-link" href="../../project-team/project-team.html"><h1>Project Team</h1></a>
+        </div>
+    </div>
 	<div class="container">
+		<div class="header">
+            <div class="menu_container" onclick="menuFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
 	<div class="container">			
 			<div class="landing">
                 <h1>Mosul Offensive (2015)</h1>
@@ -145,6 +170,7 @@
 
 </div>
 </div>
+</body>
 </body>
 </html>
 

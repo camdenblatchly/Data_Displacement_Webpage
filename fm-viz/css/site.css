@@ -6,27 +6,23 @@
 #bar_chart{
     width:98%;
     height:250px;
-    display:inline-block;
     padding-top: 30px;
 }
 
 #bar_chart_ar{
     width:98%;
     height:250px;
-    display:inline-block;
     padding-top: 30px;
 }
 
 #slider { 
     width:84%;
-    display:inline-block;
     margin-left: 125px;
     margin-bottom: 15px;
 }
 
 #slider_ar { 
     width:84%;
-    display:inline-block;
     margin-left: 125px;
     margin-bottom: 15px;
 }

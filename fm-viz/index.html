@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
 <!--         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 --> <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
 
+    <script src="js/d3.js" charset="utf-8"></script>
     <script src="data/bar_data.js"></script>
 
     <script src="data/eng_all_map.js"></script>
@@ -24,7 +27,7 @@
     <script src="data/region_events.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   
@@ -52,17 +55,17 @@
 </head>
 <body>
 <div class="animsition">
-    <div id="overlay">
-            <div id="text" class="disable_links">
-                <a class="animsition-link" href="../../../index.html"><h1>Home</h1></a>
-                <a class="animsition-link" href="../../../overview/overview.html"><h1>Overview</h1></a>
-                <a class="animsition-link" href="../../../methods/methods.html"><h1>Methods</h1></a>
-                <a class="animsition-link" href="../../../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
-                <a class="animsition-link" href="../../../findings/findings.html"><h1>Findings</h1></a>
-                <a class="animsition-link" href=""><h1>Analytics Tools and Data</h1></a>
-                <a class="animsition-link" href="../../../project-team/project-team.html"><h1>Project Team</h1></a>
-            </div>
+    <div id="overlay" class="container">
+        <div id="text" class="disable_links">
+            <a class="animsition-link" href="../../../index.html"><h1>Home</h1></a>
+            <a class="animsition-link" href="../../../overview/overview.html"><h1>Overview</h1></a>
+            <a class="animsition-link" href="../../../methods/methods.html"><h1>Methods</h1></a>
+            <a class="animsition-link" href="../../../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+            <a class="animsition-link" href="../../../findings/findings.html"><h1>Findings</h1></a>
+            <a class="animsition-link" href=""><h1>Analytics Tools and Data</h1></a>
+            <a class="animsition-link" href="../../../project-team/project-team.html"><h1>Project Team</h1></a>
         </div>
+    </div>
     <div class="container">
         <div class="header">
             <div class="menu_container" onclick="menuFunction(this)">
@@ -156,15 +159,104 @@
                                 <div id="map" class="col-md-12"></div>
                             </div>
                         </div>
+
+                        <!-- bar and line charts -->
+<H4><CENTER>Chatter, Sentiment, and Displacement</CENTER></H4>
+                    
+
+                    <div class="row">
+                        
+                        The bar charts below allow you to view the raw data over time. These data include all tweets, not just those mentioning a location. One interesting insight is that positive and negative sentiment are correlated, but while English and Arabic tweets are also correlated, there each follow slightly different temporal patterns. . This highlights how important it is to capture diverse signals.
+
+                        Another insight is that English is always more negative in #ISIS tweets, while Arabic tweets show more variation, leaning toward more positive. It should be noted, however, that sentiment, or emotional overtones, is not the same as stance.
+
+                        Finally, there are spikes in the number of tweets after major attacks or violent events.
+                        
+                        <P>&nbsp;</P>
+                        <P>&nbsp;</P>
+
+                        <!-- checkbox -->
+
+                        <div id="categ">
+
+                           <p> <span class="auto_tip">** Select three buttons to change data on Bar Graph. </span></p>
+                                <form role="form" id= "group1" class="categories">
+                                  <input class="category" type="checkbox" name="group1" id="allEng" checked="checked">
+                                  <label for="allEng" style="border-right: 3px solid #fff;">English Total Volume&nbsp;&nbsp;&nbsp;</label>
+                                  
+                                  &nbsp;&nbsp;
+                                  <input class="category" type="checkbox" name="group1" id="posEng" >
+                                  <label for="posEng">Positive English</label>
+
+                                  <input class="category" type="checkbox" name="group1" id="negEng" >
+                                  <label for="negEng" style="border-right: 3px solid #fff;">Negative English&nbsp;&nbsp;&nbsp;</label>
+                                  
+                                  &nbsp;&nbsp;
+                                  
+                                  <input class="category" type="checkbox" name="group1" id="DFC"  checked="checked">
+                                  <label for="DFC">Displaced Family Count</label>
+
+                                  <input class="category" type="checkbox" name="group1" id="death" >
+                                  <label for="death">Death Count</label>
+                                </form>
+                        </div>
+
+                        <!-- title -->
+                        <!-- <div class="col-lg-10">
+                            <div id="titleBarchar" class="col-md-12"></div>
+                        </div> -->
+
+                        
+                        <!-- barchart -->
+                        <div id="bar_chart" class="col-lg-12"></div>
+
+                        <p> <span class="slide_tip">** Slide on either end to adjust timescale. </span></p>
+                        <div id="slider"></div>
+
+                        <div id="categ_ar">
+
+                           <p> <span class="auto_tip">** Select three buttons to change data on Bar Graph. </span></p>
+                                <form role="form" id= "group1" class="categories_ar">
+
+                                  <input class="category_ar" type="checkbox" name="group1" id="allAra" checked="checked">
+                                  <label for="allAra" style="border-right: 3px solid #fff;">Arabic Total Volume&nbsp;&nbsp;&nbsp;</label>
+                                  &nbsp;&nbsp;
+                                  
+                                  <input class="category_ar" type="checkbox" name="group1" id="posAra" >
+                                  <label for="posAra">Positive Arabic</label>
+
+                                  <input class="category_ar" type="checkbox" name="group1" id="negAra" >
+                                  <label for="negAra" style="border-right: 3px solid #fff;">Negative Arabic&nbsp;&nbsp;&nbsp;</label>
+                                  &nbsp;&nbsp;
+                                  
+                                  <input class="category_ar" type="checkbox" name="group1" id="DFC"  checked="checked">
+                                  <label for="DFC">Displaced Family Count</label>
+
+                                  <input class="category_ar" type="checkbox" name="group1" id="death" >
+                                  <label for="death">Death Count</label>
+                                </form>
+                        </div>
+
+                        <div id="bar_chart_ar" class="col-lg-12"></div>
+
+                        <p> <span class="slide_tip">** Slide on either end to adjust timescale. </span></p>
+                        <div id="slider_ar"></div>
+
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+
+
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <p>
-                                This line chart allows for comparison by displaying the percent change each month from the previous month. One interesting takeaway is that the number of new families displaced from month to month does not change as drastically as social media signals.
+                                While signals on the bar chart are difficult to compare because of differences in scale, this line chart allows for comparison by displaying the percent change each month from the previous month. One interesting takeaway is that the number of new families displaced from month to month does not change as drastically as social media signals.
 
-                                The comparison between English and Arabic signals is more clear in this chart. There is a clear correlation, but also considerable variability between the two.
+                        The comparison between English and Arabic signals is more clear in this chart. There is a clear correlation, but also considerable variability between the two.
 
-                                This chart also highlights that while positive and negative sentiment in English are closely tied, there is divergence between the positive and negative signals in Arabic. This suggests that in Arabic, each may be capturing something slightly different.
+                        This chart also highlights that while positive and negative sentiment in English are closely tied, there is divergence between the positive and negative signals in Arabic. This suggests that in Arabic, each may be capturing something slightly different.
                                 </p>
                             </div>
                             <div class="col-md-2"></div>

@@ -1,133 +1,161 @@
-
 <!DOCTYPE html>
 <html>
-	<meta charset="utf-8"/>
+<meta charset="utf-8" />
+<center>
+    <title>Fallujah Offensive</title>
+</center>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-	
-	<center>
-		<title>Fallujah Offensive</title>
-	</center>
-	<script src="js/sorttable.js"></script>
-	<script src="js/d3.v4.min.js"></script>
-	<script src="js/barandLine.js"></script>
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/site.css"/>
-    <script src="js/jquery.js"></script>
-    
+		<script src="js/sorttable.js"></script>
+		<script src="js/d3.v4.min.js"></script>
+		<script src="js/barandLine.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/site.css" />
+		<script src="js/jquery.js"></script>
+		<script src="data/all_map.js"></script>
+		<script src="data/map_settings.js"></script>
+		<script src="data/SyrAndIrq.js"></script>
+		<script src="js/d3-tip.js"></script>
+		<script src="js/button_event.js"></script>
 
-    <script src="data/all_map.js"></script>
-    <script src="data/map_settings.js"></script>
-    <script src="data/SyrAndIrq.js"></script>
-    <script src="js/d3-tip.js"></script>
-    <script src="js/button_event.js"></script>
+		<script src="js/animsition/dist/js/animsition.min.js"></script>
+    <link rel="stylesheet" href="js/animsition/dist/css/animsition.min.css">
+
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/navigation.css">
 
 
-	<body>
-		<div id = "container">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:400,500" rel="stylesheet">
 
-	        <div id=" panel">
-	        	<div class="row_head">
-                        <h3>Third Battle of Fallujah 2016</h3>
+<body>
+    <div class="animsition">
+    	<div id="overlay" class="container">
+	        <div id="text" class="disable_links">
+	            <a class="animsition-link" href="../../index.html"><h1>Home</h1></a>
+	            <a class="animsition-link" href="../../overview/overview.html"><h1>Overview</h1></a>
+	            <a class="animsition-link" href="../../methods/methods.html"><h1>Methods</h1></a>
+	            <a class="animsition-link" href="../../drivers-of-movement/drivers.html"><h1>Drivers of Movement</h1></a>
+	            <a class="animsition-link" href="../../findings/findings.html"><h1>Findings</h1></a>
+	            <a class="animsition-link" href="../index.html"><h1>Analytics Tools and Data</h1></a>
+	            <a class="animsition-link" href="../../project-team/project-team.html"><h1>Project Team</h1></a>
+	        </div>
+    	</div>
+        <div class="container">
+        	<div class="header">
+	            <div class="menu_container" onclick="menuFunction(this)">
+	                <div class="bar1"></div>
+	                <div class="bar2"></div>
+	                <div class="bar3"></div>
+	            </div>
+	        </div>
+            <div class="container">
+                <div class="landing row">
+                    <div class="col">
+                        <h1>Third Battle of Fallujah (2016)</h1>
+                    </div>
                 </div>
-                <div class="timeline_events_title">
-                    	<h3>Introduction</h3>
+                <div id="container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <h3>Introduction</h3>
+                            <p>The city of Fallujah in Iraq had been under ISIS control since January of 2014. Two years later, on February 2, 2016, Iraqi forces cut off all supply lines to the city, beginning the Siege of Fallujah. Over the next three months, the military tightened the siege, steadily taking suburbs and towns on the outskirts, and securing the bridges into the river-edged city. At least 4-600 ISIS fighters fled the area as Iraqi forces moved inward.
+                                The cutting of the supply lines led to concerns that the 50,000 civilians trapped there might starve or freeze in the winter, leading to pressure to end the siege. On May 22nd, Iraqi forces announced Operation Breaking Terrorism and warned civilians to flee the city through designated routes or to raise white flags. The following day, Iraqi forces advanced, beginning the Third Battle of Fallujah.
+                                Because the offensive was announced with only one day's notice, civilians had limited opportunity to flee. Iraqi forces entered the city by the end of May. Over the next month, forces advanced, finally clearing the city by June 29th. </p>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                    <body>
+                        <div id="container">
+                            <div id=" panel">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div id="week1" class="col-md-8"></div>
+                                    <div class="col-md-2"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <P>This map shows the number destinations of families fleeing from Anbar in the time surrounding the liberation. We can see that many families remained within Anbar, fleeing close-by. We also see that Ninawa, another governorate with high levels of violence and ISIS presence, was not a popular destination despite its proximity.
+                                            After the offensive, the number of IDPs from Anbar residing around Iraq decreased, perhaps because some families returned, or perhaps because there were fewer families fleeing Anbar after the liberation of Fallujah to replace those who had moved a second time. </P>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p><span class="playPause1 paused"></span> &nbsp;Autoplay </p>
+                                </div>
+                            </div>
+                            <!-- Time axis -->
+                            <div class="row">
+                                <div id="wrap1">
+                                    <div id="timeaxis1" class="col-md-12"></div>
+                                </div>
+                            </div>
+                            <!-- map -->
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div id="map1" class="col-md-12"></div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-                <div class="timeline_events_details">
-                    	<p>The city of Fallujah in Iraq had been under ISIS control since January of 2014. Two years later, on February 2, 2016, Iraqi forces cut off all supply lines to the city, beginning the Siege of Fallujah. Over the next three months, the military tightened the siege, steadily taking suburbs and towns on the outskirts, and securing the bridges into the river-edged city. At least 4-600 ISIS fighters fled the area as Iraqi forces moved inward. 
-						The cutting of the supply lines led to concerns that the 50,000 civilians trapped there might starve or freeze in the winter, leading to pressure to end the siege. On May 22nd, Iraqi forces announced Operation Breaking Terrorism and warned civilians to flee the city through designated routes or to raise white flags. The following day, Iraqi forces advanced, beginning the Third Battle of Fallujah. 
-						Because the offensive was announced with only one day's notice, civilians had limited opportunity to flee. Iraqi forces entered the city by the end of May. Over the next month, forces advanced, finally clearing the city by June 29th. </p>
-            </div>
-        </div>
-			
-		
-		<body>
-
-			<div id = "container">
-
-		        <div id=" panel">
-	                <div class="row">
-	                    <!-- text -->
-	                  	<div class="col-lg-10">
-	                    	<div id="week1" class="col-md-12"></div>
-	                    	This map shows the number destinations of families fleeing from Anbar in the time surrounding the liberation. We can see that many families remained within Anbar, fleeing close-by. We also see that Ninawa, another governorate with high levels of violence and ISIS presence, was not a popular destination despite its proximity.
-							After the offensive, the number of IDPs from Anbar residing around Iraq decreased, perhaps because some families returned, or perhaps because there were fewer families fleeing Anbar after the liberation of Fallujah to replace those who had moved a second time. 
-	                  	</div>
-	                    <div class="col-lg-2">
-	                        <p><span class="playPause1 paused"></span> &nbsp;Autoplay </p>
-	                    </div> 
-	                </div>
-
-		                <!-- Time axis -->
-		        <div class="row">
-		            <div id = "wrap1">
-		                <div id="timeaxis1" class="col-md-12"></div>
-		            </div>
-		        </div>
-		              <!-- map -->
-		        <div class="row">
-		            <div class="col-lg-10">
-		                <div id="map1" class="col-md-12"></div>
-		            </div>
-		        </div>
-		               
-		                
-		        </div>
-
-		    </div>
-
-			
-			<span style=" z-index: 2; margin-top: 400px; float:left;position: absolute;width:150px;left: 80px">* Click names of variables to hide/show bars</span>
-			<div id="barchart" style="height: 450px; width: 950px; margin:80px;"></div>
-			<div style="margin: 80px">
-				These two graphs compare twitter signals in each language to the number of families who have fled Anbar. Each signals is correlated with movement.
-				<P></P>
-				<P></P>
-				<div id="barchart_arabic" style="height: 400px; width: 430px;display: inline-block"></div>
-				<div id="barchart_eng" style="height: 400px; width: 430px;display: inline-block;margin-left:40px;"></div>
-			</div>
-
-			<div style="display: block; z-index: 3;margin-top: 25px; float:left;position:absolute;width:300px;left: 150px;">
-				<button onclick="btn_movement_function()" id="myBtn1">Change Timescale</button>
-			</div>
-
-			<div class="linechartStyle">
-				<div id="changebarchartNumofFam" style=" width: 950px;left: 80px;position: absolute;"></div>
-				<div id="barchartNumofFam" style="width: 950px; left: 80px; display: block;position: absolute;	 "></div>
-			</div>
-			
-
-			<div class="timeline_events_details">
-            	<!--p>
+                <div class="row">
+                    <span style=" z-index: 2; margin-top: 400px;position: absolute;width:150px;">* Click names of variables to hide/show bars</span>
+                    <div id="barchart" style="height: 450px; width: 950px; margin:80px;"></div>
+                    <div style="margin: 80px">
+                        These two graphs compare twitter signals in each language to the number of families who have fled Anbar. Each signals is correlated with movement.
+                        <P></P>
+                        <P></P>
+                        <div id="barchart_arabic" style="height: 400px; width: 430px;display: inline-block"></div>
+                        <div id="barchart_eng" style="height: 400px; width: 430px;display: inline-block;margin-left:40px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-11">
+                            <div style="display: block; z-index: 3;margin-top: 25px;position:absolute;width:300px;">
+                                <button onclick="btn_movement_function()" id="myBtn1">Change Timescale</button>
+                            </div>
+                            <div class="linechartStyle">
+                                <div id="changebarchartNumofFam" style=" width: 950px;position: absolute;"></div>
+                                <div id="barchartNumofFam" style="width: 950px; display: block;position: absolute;	 "></div>
+                            </div>
+                            <div class="timeline_events_details">
+                                <!--p>
             		add text to bar chart
             	</p-->
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div style="display: block; z-index: 3;margin-top: 130px;position:absolute;width:200px;">
+                                        <button onclick="myFunctionButton()" id="myBtn">Change Y Axis Scale </button>
+                                        <button onclick="myFunctionButton1()" id="myBtn1">Change Timescale</button>
+                                    </div>
+                                    <span style=" z-index: 2; margin-top: 320px; position: absolute;width:150px;">* Click names of variables to hide/show lines</span>
+                                    <div class="linechartStyle">
+                                        <div id="linechartChangeScale" style="width: 950px;position: absolute"></div>
+                                        <div id="linecharScalexy" style="width: 950px;position: absolute"></div>
+                                        <div id="linechartNormYScaleChangeX" style="width: 950px;position: absolute"></div>
+                                        <div id="linechartNormScale" style="display: block;width: 950px;position: absolute"></div>
+                                    </div>
+                                    <P>
+                                        <center>
+                                            <a href="table.htm">Detailed Table of Family Movements from Ninawa Governorate</a>
+                                        </center>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/site.js"></script>
+</body>
 
-			<div style="display: block; z-index: 3;margin-top: 130px;float:left;position:absolute;width:200px;left: 80px">
-				<button onclick="myFunctionButton()" id="myBtn">Change Y Axis Scale </button>
-				<button onclick="myFunctionButton1()" id="myBtn1">Change Timescale</button>
-			</div>
-			<span style=" z-index: 2; margin-top: 320px; float:left;position: absolute;width:150px;left: 80px">* Click names of variables to hide/show lines</span>
-			<div class="linechartStyle">
-				<div id="linechartChangeScale" style="width: 950px;left: 80px;position: absolute" ></div>
-				<div id="linecharScalexy" style="width: 950px;left: 80px;position: absolute"></div>
-				<div id="linechartNormYScaleChangeX" style="width: 950px;left: 80px;position: absolute"></div>
-				<div id="linechartNormScale" style="display: block;width: 950px;left: 80px;position: absolute"></div>
-			</div>
-
-            <P>
-		    <center>
-			<a href="table.htm">Detailed Table of Family Movements from Ninawa Governorate</a>
-			</center>
-			</P>
-			
-
-			<script src="js/canvasjs.min.js"></script>
-			<script src="js/site.js"></script>
-
-
-
-		</body>
 </html>
-
-
